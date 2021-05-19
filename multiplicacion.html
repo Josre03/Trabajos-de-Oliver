@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas de Multiplicar</title>
+	<script type="text/javascript">
+        /*
+        Alumno: Joshua Rendon Cortez
+        Grupo: 604
+        Actividad: Vigencia
+        */
+		function multiplication(){
+			var x = parseInt(multiplicationTables.x.value);
+			if ((x<-10) || (x>5000)) {
+				alert("El número introducido no es válido."); 
+			 	multiplicationTables.reset();
+			 }
+
+			else{
+				document.write("<h2>Tabla de multiplicar del "+ x +"</h2>");
+                
+                
+                for(i = 1;i<=20;i++){
+        
+                    document.write(x + " x " + i + " = " + x * i );
+                    document.write("<br>");
+			    }
+		
+		    }
+        }   				
+	</script>
+</head>
+<body>
+        <center>
+            <form name="multiplicationTables">
+                Introduce el numero que deseas multiplicar, desde -10 hasta 5000 (Utilice solo números enteros)
+                <br/>
+                <input type="text" name="x">
+                <br/><br/>
+                <input type="button" name="function" value="Ejecutar" onclick="multiplication()">
+            </form>
+            <h4>Autor: Joshua Rendon Cortez</h4>
+            <h4>Grupo: 604</h4>
+        </center>
+    <script>
+        /*
+        Alumno: Joshua Rendon Cortez
+        Grupo: 604
+        Actividad: Vigencia
+        */
+       const checkDate = (minDate, maxDate) =>{
+            let actualDate, min, max;
+            actualDate = new Date();
+            min = new Date(minDate);
+            max = new Date(maxDate);
+
+            if (actualDate >= min && actualDate <=max){
+                console.log("página en funcionamiento...");
+            }
+            else{
+                document.body.innerHTML = '';
+                document.write("'<h1>La página ha expirado</h1>'");
+            }
+       }
+       document.addEventListener("load", checkDate('2021-05-15','2021-06-20'))
+    </script>
+</body>
+</html>
